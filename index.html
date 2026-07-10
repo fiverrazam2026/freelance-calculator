@@ -4,17 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Freelance Rate & Profit Calculator</title>
-    <!-- Solid Production Build Tailwind CSS Fallback Mirror -->
-    <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-wnea99cRJDJWB9kbysGyO4skUoejSk+K9VyaxQ5vE3Up1uYkwYcLCvycztcWcNF/f21HBHO69IOWf6cxZTR7aA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- PINTEREST VERIFICATION TAG PLACEHOLDER -->
     <meta name="p:domain_verify" content="5c5379ee74e67535854d7e9be6faab3b"/>
+    
+    <!-- EMBEDDED INTERNAL DESIGN HOOKS -->
+    <style>
+        body { background-color: #0f172a; color: #ffffff; font-family: sans-serif; min-height: 100vh; margin: 0; display: flex; flex-direction: column; justify-content: space-between; }
+        .ad-box { w-full; background-color: #1e293b; border-bottom: 1px solid #334155; padding: 16px; text-align: center; font-size: 12px; color: #94a3b8; letter-spacing: 0.1em; font-family: monospace; }
+        .ad-box-bottom { border-top: 1px solid #334155; border-bottom: none; margin-top: 32px; }
+        main { max-width: 56rem; width: 100%; margin: auto; padding: 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; }
+        header { text-align: center; margin-bottom: 32px; }
+        h1 { font-size: 2.25rem; font-weight: 800; color: #38bdf8; margin-bottom: 8px; }
+        .subtitle { color: #94a3b8; font-size: 1rem; }
+        .grid-container { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start; }
+        @media (min-width: 768px) { .grid-container { grid-template-columns: 1fr 1fr; } }
+        section { background-color: #1e293b; border: 1px solid #334155; padding: 24px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        .space-y-6 > * + * { margin-top: 24px; }
+        .space-y-4 > * + * { margin-top: 16px; }
+        h2 { font-size: 1.25rem; font-weight: 700; color: #ffffff; border-bottom: 1px solid #334155; padding-bottom: 8px; margin-top: 0; margin-bottom: 16px; }
+        .input-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .label-text { font-size: 0.875rem; font-weight: 500; color: #94a3b8; }
+        .val-text { font-size: 0.875rem; font-weight: 700; color: #38bdf8; }
+        input[type="range"] { width: 100%; height: 8px; background-color: #334155; border-radius: 8px; appearance: none; cursor: pointer; }
+        .card { background-color: #1e293b; padding: 20px; border-radius: 0 12px 12px 0; border-left: 4px solid #38bdf8; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .card-green { border-left-color: #10b981; }
+        .card-yellow { border-left-color: #f59e0b; }
+        .card-title { font-size: 0.75rem; uppercase; tracking-wider; color: #94a3b8; font-weight: 600; margin: 0 0 4px 0; text-transform: uppercase; }
+        .card-val { font-size: 2.25rem; font-weight: 900; color: #38bdf8; margin: 0; }
+        .card-green .card-val { color: #10b981; font-size: 1.875rem; }
+        .card-yellow .card-val { color: #f59e0b; font-size: 1.875rem; }
+        .card-desc { font-size: 11px; color: #64748b; margin-top: 4px; margin-bottom: 0; }
+        .flex-center { display: flex; justify-content: center; justify-items: center; margin-top: 8px; }
+    </style>
 </head>
-<body class="bg-[#0f172a] text-white min-h-screen flex flex-col justify-between font-sans">
+<body>
 
     <!-- SPONSORED ADVERTISEMENT TOP -->
-    <div class="w-full bg-[#1e293b] border-b border-[#334155] p-4 text-center text-xs text-[#94a3b8] tracking-widest font-mono">
+    <div class="ad-box">
         SPONSORED ADVERTISEMENT
-        <div class="mt-2 flex justify-center justify-items-center">
+        <div class="flex-center">
             <!-- BANNER 1: TOP IN-PAGE PUSH PLACEMENT -->
             <div id="monetag-banner-top"></div>
             <script>(function(s){s.dataset.zone='11267460',s.src='https://al5sm.com'})([document.getElementById('monetag-banner-top')].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
@@ -22,84 +50,84 @@
     </div>
 
     <!-- MAIN CONTAINER -->
-    <main class="max-w-4xl w-full mx-auto p-4 md:p-8 flex-grow flex flex-col justify-center">
-        <header class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-blue-400 tracking-tight mb-2">Freelance Rate & Profit Calculator</h1>
-            <p class="text-gray-400 text-sm md:text-base">Calculate your ideal global hourly rate and project net profits instantly.</p>
+    <main>
+        <header>
+            <h1>Freelance Rate & Profit Calculator</h1>
+            <p class="subtitle">Calculate your ideal global hourly rate and project net profits instantly.</p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div class="grid-container">
             <!-- INPUT CONTROLS PANEL -->
-            <section class="bg-[#1e293b] border border-[#334155] p-6 rounded-2xl shadow-xl space-y-6">
-                <h2 class="text-xl font-bold text-white border-b border-[#334155] pb-2">Financial Goals</h2>
+            <section class="space-y-6">
+                <h2>Financial Goals</h2>
                 
                 <!-- Input 1 -->
                 <div>
-                    <div class="flex justify-between items-center mb-2">
-                        <label class="text-sm font-medium text-gray-400">Desired Annual Income (USD)</label>
-                        <span id="incomeVal" class="text-sm font-bold text-blue-400">$50,000</span>
+                    <div class="input-row">
+                        <label class="label-text">Desired Annual Income (USD)</label>
+                        <span id="incomeVal" class="val-text">$50,000</span>
                     </div>
-                    <input type="range" id="annualIncome" min="10000" max="200000" step="5000" value="50000" class="w-full h-2 bg-[#334155] rounded-lg appearance-none cursor-pointer accent-[#38bdf8]">
+                    <input type="range" id="annualIncome" min="10000" max="200000" step="5000" value="50000">
                 </div>
 
                 <!-- Input 2 -->
                 <div>
-                    <div class="flex justify-between items-center mb-2">
-                        <label class="text-sm font-medium text-gray-400">Billable Hours Per Week</label>
-                        <span id="hoursVal" class="text-sm font-bold text-blue-400">25 hrs</span>
+                    <div class="input-row">
+                        <label class="label-text">Billable Hours Per Week</label>
+                        <span id="hoursVal" class="val-text">25 hrs</span>
                     </div>
-                    <input type="range" id="billableHours" min="5" max="60" step="1" value="25" class="w-full h-2 bg-[#334155] rounded-lg appearance-none cursor-pointer accent-[#38bdf8]">
+                    <input type="range" id="billableHours" min="5" max="60" step="1" value="25">
                 </div>
 
                 <!-- Input 3 -->
                 <div>
-                    <div class="flex justify-between items-center mb-2">
-                        <label class="text-sm font-medium text-gray-400">Monthly Business Overhead (USD)</label>
-                        <span id="overheadVal" class="text-sm font-bold text-blue-400">$200</span>
+                    <div class="input-row">
+                        <label class="label-text">Monthly Business Overhead (USD)</label>
+                        <span id="overheadVal" class="val-text">$200</span>
                     </div>
-                    <input type="range" id="monthlyOverhead" min="0" max="2000" step="50" value="200" class="w-full h-2 bg-[#334155] rounded-lg appearance-none cursor-pointer accent-[#38bdf8]">
+                    <input type="range" id="monthlyOverhead" min="0" max="2000" step="50" value="200">
                 </div>
 
                 <!-- Input 4 -->
                 <div>
-                    <div class="flex justify-between items-center mb-2">
-                        <label class="text-sm font-medium text-gray-400">Estimated Tax Rate (%)</label>
-                        <span id="taxVal" class="text-sm font-bold text-blue-400">20%</span>
+                    <div class="input-row">
+                        <label class="label-text">Estimated Tax Rate (%)</label>
+                        <span id="taxVal" class="val-text">20%</span>
                     </div>
-                    <input type="range" id="taxRate" min="0" max="50" step="1" value="20" class="w-full h-2 bg-[#334155] rounded-lg appearance-none cursor-pointer accent-[#38bdf8]">
+                    <input type="range" id="taxRate" min="0" max="50" step="1" value="20">
                 </div>
             </section>
 
             <!-- OUTPUT METRICS DASHBOARD -->
-            <section class="space-y-4">
+            <div class="space-y-4">
                 <!-- Card 1 -->
-                <div class="bg-[#1e293b] border-l-4 border-blue-400 p-5 rounded-r-xl rounded-l-md shadow-md">
-                    <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold mb-1">Required Hourly Rate</p>
-                    <p id="calcHourlyRate" class="text-4xl font-black text-blue-400">$0.00</p>
-                    <p class="text-xs text-gray-500 mt-1">Minimum to charge per hour to clear expenses and reach your goal.</p>
+                <div class="card">
+                    <p class="card-title">Required Hourly Rate</p>
+                    <p id="calcHourlyRate" class="card-val">$0.00</p>
+                    <p class="card-desc">Minimum to charge per hour to clear expenses and reach your goal.</p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-[#1e293b] border-l-4 border-green-500 p-5 rounded-r-xl rounded-l-md shadow-md">
-                    <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold mb-1">Target Monthly Gross</p>
-                    <p id="calcMonthlyGross" class="text-3xl font-black text-green-500">$0.00</p>
-                    <p class="text-xs text-gray-500 mt-1">Total revenue required before local business expenses and tax deductions.</p>
+                <div class="card card-green">
+                    <p class="card-title">Target Monthly Gross</p>
+                    <p id="calcMonthlyGross" class="card-val">$0.00</p>
+                    <p class="card-desc">Total revenue required before local business expenses and tax deductions.</p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-[#1e293b] border-l-4 border-yellow-500 p-5 rounded-r-xl rounded-l-md shadow-md">
-                    <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold mb-1">Net Monthly Profit</p>
-                    <p id="calcNetProfit" class="text-3xl font-black text-yellow-500">$0.00</p>
-                    <p class="text-xs text-gray-500 mt-1">Take-home money deposited directly to your bank account after taxes.</p>
+                <div class="card card-yellow">
+                    <p class="card-title">Net Monthly Profit</p>
+                    <p id="calcNetProfit" class="card-val">$0.00</p>
+                    <p class="card-desc">Take-home money deposited directly to your bank account after taxes.</p>
                 </div>
-            </section>
+            </div>
         </div>
     </main>
 
     <!-- SPONSORED ADVERTISEMENT BOTTOM -->
-    <div class="w-full bg-[#1e293b] border-t border-[#334155] p-4 text-center text-xs text-[#94a3b8] tracking-widest font-mono mt-8">
+    <div class="ad-box ad-box-bottom">
         SPONSORED ADVERTISEMENT
-        <div class="mt-2 flex justify-center justify-items-center">
+        <div class="flex-center">
             <!-- BANNER 2: BOTTOM IN-PAGE PUSH PLACEMENT -->
             <div id="monetag-banner-bottom"></div>
             <script>(function(s){s.dataset.zone='11267460',s.src='https://al5sm.com'})([document.getElementById('monetag-banner-bottom')].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
@@ -119,13 +147,11 @@
             const monthlyOverhead = parseFloat(monthlyOverheadInput.value);
             const taxRate = parseFloat(taxRateInput.value);
 
-            // Update range layout values
             document.getElementById('incomeVal').innerText = '$' + annualIncome.toLocaleString();
             document.getElementById('hoursVal').innerText = hoursPerWeek + ' hrs';
             document.getElementById('overheadVal').innerText = '$' + monthlyOverhead.toLocaleString();
             document.getElementById('taxVal').innerText = taxRate + '%';
 
-            // Calculate business financial logic
             const annualOverhead = monthlyOverhead * 12;
             const grossAnnualRequired = annualIncome + annualOverhead;
             const totalBillableHoursPerYear = hoursPerWeek * 52;
@@ -137,18 +163,15 @@
             const monthlyTaxAmount = (monthlyGross - monthlyOverhead) * (taxRate / 100);
             const netMonthlyProfit = monthlyGross - monthlyOverhead - (monthlyTaxAmount > 0 ? monthlyTaxAmount : 0);
 
-            // Update UI elements live
             document.getElementById('calcHourlyRate').innerText = '$' + hourlyRate.toFixed(2);
             document.getElementById('calcMonthlyGross').innerText = '$' + monthlyGross.toFixed(2);
             document.getElementById('calcNetProfit').innerText = '$' + netMonthlyProfit.toFixed(2);
         }
 
-        // Add event listeners for instant computation sliders
         [annualIncomeInput, billableHoursInput, monthlyOverheadInput, taxRateInput].forEach(input => {
             input.addEventListener('input', calculateMetrics);
         });
 
-        // Initialize display stats instantly on first load
         calculateMetrics();
     </script>
 
