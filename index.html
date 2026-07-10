@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Freelance Rate & Profit Calculator</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://jsdelivr.net"></script>
+    <!-- PINTEREST VERIFICATION TAG PLACEHOLDER -->
+</head>
+<body class="bg-[#0f172a] text-white min-h-screen flex flex-col justify-between font-sans">
+
+    <!-- SPONSORED ADVERTISEMENT TOP -->
+    <div class="w-full bg-[#1e293b] border-b border-[#334155] p-4 text-center text-xs text-[#94a3b8] tracking-widest font-mono">
+        SPONSORED ADVERTISEMENT
+        <div class="mt-1 flex justify-center justify-items-center">
+            <!-- MONETAG AD SCRIPT PLACEHOLDER -->
+        </div>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-4xl w-full mx-auto p-4 md:p-8 flex-grow flex flex-col justify-center">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-[#38bdf8] tracking-tight mb-2">Freelance Rate & Profit Calculator</h1>
+            <p class="text-[#94a3b8] text-sm md:text-base">Calculate your ideal global hourly rate and project net profits instantly.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <!-- INPUT CONTROLS PANEL -->
+            <section class="bg-[#1e293b] border border-[#334155] p-6 rounded-2xl shadow-xl space-y-6">
+                <h2 class="text-xl font-bold text-white border-b border-[#334155] pb-2">Financial Goals</h2>
+                
+                <!-- Input 1 -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-medium text-[#94a3b8]">Desired Annual Income (USD)</label>
+                        <span id="incomeVal" class="text-sm font-bold text-[#38bdf8]">$50,000</span>
+                    </div>
+                    <input type="range" id="annualIncome" min="10000" max="200000" step="5000" value="50000" class="w-full h-2 bg-[#334155] rounded-lg appearance-none cursor-pointer accent-[#38bdf8]">
+                </div>
+
+                <!-- Input 2 -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-medium text-[#94a3b8]">Billable Hours Per Week</label>
+                        <span id="hoursVal" class="text-sm font-bold text-[#38bdf8]">25 hrs</span>
+                    </div>
+                    <input type="range" id="billableHours" min="5" max="60" step="1" value="25" class="w-full h-2 bg-[#334155] rounded-lg appearance-none cursor-pointer accent-[#38bdf8]">
+                </div>
+
+                <!-- Input 3 -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-medium text-[#94a3b8]">Monthly Business Overhead (USD)</label>
+                        <span id="overheadVal" class="text-sm font-bold text-[#38bdf8]">$200</span>
+                    </div>
+                    <input type="range" id="monthlyOverhead" min="0" max="2000" step="50" value="200" class="w-full h-2 bg-[#334155] rounded-lg appearance-none cursor-pointer accent-[#38bdf8]">
+                </div>
+
+                <!-- Input 4 -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-medium text-[#94a3b8]">Estimated Tax Rate (%)</label>
+                        <span id="taxVal" class="text-sm font-bold text-[#38bdf8]">20%</span>
+                    </div>
+                    <input type="range" id="taxRate" min="0" max="50" step="1" value="20" class="w-full h-2 bg-[#334155] rounded-lg appearance-none cursor-pointer accent-[#38bdf8]">
+                </div>
+            </section>
+
+            <!-- OUTPUT METRICS DASHBOARD -->
+            <section class="space-y-4">
+                <!-- Card 1 -->
+                <div class="bg-[#1e293b] border-l-4 border-[#38bdf8] p-5 rounded-r-xl rounded-l-md shadow-md">
+                    <p class="text-xs uppercase tracking-wider text-[#94a3b8] font-semibold mb-1">Required Hourly Rate</p>
+                    <p id="calcHourlyRate" class="text-4xl font-black text-[#38bdf8]">$0.00</p>
+                    <p class="text-[11px] text-[#64748b] mt-1">Minimum to charge per hour to clear expenses and reach your goal.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-[#1e293b] border-l-4 border-[#10b981] p-5 rounded-r-xl rounded-l-md shadow-md">
+                    <p class="text-xs uppercase tracking-wider text-[#94a3b8] font-semibold mb-1">Target Monthly Gross</p>
+                    <p id="calcMonthlyGross" class="text-3xl font-black text-[#10b981]">$0.00</p>
+                    <p class="text-[11px] text-[#64748b] mt-1">Total revenue required before local business expenses and tax deductions.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-[#1e293b] border-l-4 border-[#f59e0b] p-5 rounded-r-xl rounded-l-md shadow-md">
+                    <p class="text-xs uppercase tracking-wider text-[#94a3b8] font-semibold mb-1">Net Monthly Profit</p>
+                    <p id="calcNetProfit" class="text-3xl font-black text-[#f59e0b]">$0.00</p>
+                    <p class="text-[11px] text-[#64748b] mt-1">Take-home money deposited directly to your bank account after taxes.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- SPONSORED ADVERTISEMENT BOTTOM -->
+    <div class="w-full bg-[#1e293b] border-t border-[#334155] p-4 text-center text-xs text-[#94a3b8] tracking-widest font-mono mt-8">
+        SPONSORED ADVERTISEMENT
+        <div class="mt-1 flex justify-center justify-items-center">
+            <!-- MONETAG AD SCRIPT PLACEHOLDER -->
+        </div>
+    </div>
+
+    <!-- CALCULATOR JAVASCRIPT LOGIC -->
+    <script>
+        const annualIncomeInput = document.getElementById('annualIncome');
+        const billableHoursInput = document.getElementById('billableHours');
+        const monthlyOverheadInput = document.getElementById('monthlyOverhead');
+        const taxRateInput = document.getElementById('taxRate');
+
+        function calculateMetrics() {
+            const annualIncome = parseFloat(annualIncomeInput.value);
+            const hoursPerWeek = parseFloat(billableHoursInput.value);
+            const monthlyOverhead = parseFloat(monthlyOverheadInput.value);
+            const taxRate = parseFloat(taxRateInput.value);
+
+            // Update range layout values
+            document.getElementById('incomeVal').innerText = '$' + annualIncome.toLocaleString();
+            document.getElementById('hoursVal').innerText = hoursPerWeek + ' hrs';
+            document.getElementById('overheadVal').innerText = '$' + monthlyOverhead.toLocaleString();
+            document.getElementById('taxVal').innerText = taxRate + '%';
+
+            // Calculate business financial logic 
+            const annualOverhead = monthlyOverhead * 12;
+            const grossAnnualRequired = annualIncome + annualOverhead;
+            const totalBillableHoursPerYear = hoursPerWeek * 52;
+
+            let hourlyRate = grossAnnualRequired / totalBillableHoursPerYear;
+            if(totalBillableHoursPerYear === 0) hourlyRate = 0;
+
+            const monthlyGross = grossAnnualRequired / 12;
+            const monthlyTaxAmount = (monthlyGross - monthlyOverhead) * (taxRate / 100);
+            const netMonthlyProfit = monthlyGross - monthlyOverhead - (monthlyTaxAmount > 0 ? monthlyTaxAmount : 0);
+
+            // Update UI elements live
+            document.getElementById('calcHourlyRate').innerText = '$' + hourlyRate.toFixed(2);
+            document.getElementById('calcMonthlyGross').innerText = '$' + monthlyGross.toFixed(2);
+            document.getElementById('calcNetProfit').innerText = '$' + netMonthlyProfit.toFixed(2);
+        }
+
+        // Add event listeners for instant computation sliders
+        [annualIncomeInput, billableHoursInput, monthlyOverheadInput, taxRateInput].forEach(input => {
+            input.addEventListener('input', calculateMetrics);
+        });
+
+        // Initialize display stats instantly on first load
+        calculateMetrics();
+    </script>
+</body>
+</html>
